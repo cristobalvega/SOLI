@@ -1,4 +1,4 @@
-![](http://imgur.com/A74cGhv)
+![](http://i.imgur.com/A74cGhv.png)
 
 ## Introducción
 
@@ -17,9 +17,9 @@ Este programa ayudará a los especialistas en creación de redes a tener un aná
 
 Actualmente los desarrolladores del proyecto somos estudiantes con el curso CCNA de Cisco, por lo que nos limitamos a lo que vamos aprendiendo.
 
-![](http://imgur.com/TBNlBiP)
+![](http://i.imgur.com/TBNlBiP.jpg)
 
-![](http://imgur.com/a/IUS7W)
+![](http://i.imgur.com/pBxVAOk.gif)
  
 ## Ejemplo de Uso
 
