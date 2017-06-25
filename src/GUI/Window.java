@@ -1,34 +1,57 @@
 package GUI;
 
-import java.awt.FlowLayout;
-import java.awt.GridBagLayout;
-import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.Container;
+import java.awt.Dimension;
 
 /**
  * Created by cristobalvega on 6/13/17.
  */
-public class Window extends JFrame {
 
-    JButton buttonNew,buttonOpen,buttonCompile;
-    GridBagLayout gbl;
+public class Window {
+    public static void addComponentsToPane(Container pane) {
 
-    public Window() {
-        super("SOLI");
-        setLayout(new FlowLayout());
+        if (!(pane.getLayout() instanceof BorderLayout)) {
+            pane.add(new JLabel("Container doesn't use BorderLayout!"));
+            return;
+        }
 
-        buttonNew = new JButton("New");
-        buttonOpen = new JButton("Open");
-        buttonCompile = new JButton("Complile");
+        JButton button = new JButton("Button 1 (PAGE_START)");
+        pane.add(button, BorderLayout.PAGE_START);
 
-        add(buttonNew);
-        add(buttonOpen);
-        add(buttonCompile);
+        //Make the center component big, since that's the
+        //typical usage of BorderLayout.
+        button = new JButton("Button 2 (CENTER)");
+        button.setPreferredSize(new Dimension(200, 100));
+        pane.add(button, BorderLayout.CENTER);
 
-        setVisible(true);
-        setSize(800, 600);
-        setDefaultCloseOperation(3);
-        show();
-    }//Constructor
+        button = new JButton("Button 3 (LINE_START)");
+        pane.add(button, BorderLayout.LINE_START);
 
-}//Class
+        button = new JButton("Long-Named Button 4 (PAGE_END)");
+        pane.add(button, BorderLayout.PAGE_END);
+
+        button = new JButton("5 (LINE_END)");
+        pane.add(button, BorderLayout.LINE_END);
+    }//addComponentesToPane
+
+    /**
+     * Create the GUI and show it.  For thread safety,
+     * this method should be invoked from the
+     * event dispatch thread.
+     */
+    public static void createAndShowGUI() {
+        //Create and set up the window.
+        JFrame frame = new JFrame("SOLI");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //Set up the content pane.
+        addComponentsToPane(frame.getContentPane());
+        //Use the content pane's default BorderLayout. No need for
+        //setLayout(new BorderLayout());
+        //Display the window.
+        frame.pack();
+        frame.setVisible(true);
+    }//createAndShowGUI
+
+}//Window
